@@ -8,7 +8,7 @@ return {
         event = "User AstroFile",
         opts = {
             disable_auto_comment = true,
-            accept_keymap = "<Tab-Tab>",
+            accept_keymap = "<Tab><Tab>",
             dismiss_keymap = "<C-]>",
             debounce_ms = 800,
             suggestion_color = { gui = "#89B9AD", cterm = 244 },

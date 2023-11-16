@@ -1,3 +1,12 @@
+add_buffer_autocmd("lsp_auto_format", bufnr, {
+    events = "BufWritePre",
+    desc = "autoformat on save",
+    callback = function()
+        vim.cmd [[:Alpha]]
+    end,
+})
+
+
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 -- show alpha on empty buffers
@@ -14,6 +23,18 @@ local function get_listed_buffers()
 
     return buffers
 end
+
+
+--#region
+
+augroup('on_save', { clear = true })
+autocmd('User', {
+    pattern = 'BufWritePre',
+    group = 'on_save',
+    callback = function(event)
+        vim.cmd [[:TypescriptOrganizeImpors<CR>]]
+    end,
+})
 
 -- custom
 augroup('alpha_on_empty', { clear = true })

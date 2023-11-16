@@ -217,17 +217,19 @@ return {
     dashboard.section.header.opts.hl = "DashboardHeader"
     dashboard.section.footer.opts.hl = "DashboardFooter"
 
-    local button, get_icon = require("astronvim.utils").alpha_button, require("astronvim.utils").get_icon
+    local button = require("astronvim.utils").alpha_button
+
     dashboard.section.buttons.val = {
-      button("<leader> n  ", get_icon("FileNew", 2, true) .. "New File  "),
-      button("<leader> p  ", get_icon("Package", 2, true) .. "Projects"),
-      button("<leader> f f", get_icon("Search", 2, true) .. "Find File  "),
-      button("<leader> f o", get_icon("DefaultFile", 2, true) .. "Recents  "),
-      button("<leader> f w", get_icon("WordFile", 2, true) .. "Find Word  "),
-      -- button("<leader> f '", get_icon("Bookmarks", 2, true) .. "Bookmarks  "),
-      button("<leader> f t", "󰸌  Find Theme"),
-      button("<leader> S l", get_icon("Refresh", 2, true) .. "Last Session  "),
+      button("󰧂 <leader>n ", "󰻭 [N]ew File     "),
+      button("󰧂 <leader>fp", "󱒕 [F]ind [P]rojects"),
+      button("󰧂 <leader>ff", " [F]ind [F]ile    "),
+      button("󰧂 <leader>fr", "󱀸 [F]ind [R]ecents "),
+      button("󰧂 <leader>fw", "󰱽 [F]ind [W]ord    "),
+      button("󰧂 <leader>ft", "󰸌 [F]ind [T]heme   "),
+      button("󰧂 <leader>Sl", "󰑏 [L]ast [S]ession "),
     }
+
+    dashboard.section.footer.val = { "nvim" }
 
     dashboard.config.layout = {
       { type = "padding", val = vim.fn.max { 2, vim.fn.floor(vim.fn.winheight(0) * 0.2) } },
@@ -240,5 +242,19 @@ return {
     dashboard.config.opts.noautocmd = true
     return dashboard
   end,
-  config = require "plugins.configs.alpha",
+  config = function(_, opts)
+    require("alpha").setup(opts.config)
+  
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "LazyVimStarted",
+      desc = "Add Alpha dashboard footer",
+      once = true,
+      callback = function()
+        local stats = require("lazy").stats()
+        local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
+        opts.section.footer.val = { "Nvim loaded " .. stats.count .. " plugins  in " .. ms .. "ms" }
+        pcall(vim.cmd.AlphaRedraw)
+      end,
+    })
+  end,
 }
