@@ -1,4 +1,4 @@
-# AstroNvim User Configuration bby Yohendry Hurtado
+# AstroNvim User Configuration by Yohendry Hurtado
 
 A typescript, Prisma user config for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
@@ -20,7 +20,7 @@ git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 #### Clone the repository
 
 ```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim/lua/user
+git clone git@github.com:yohendry/astrovim-yh-user-config.git ~/.config/nvim/lua/user
 ```
 
 #### Start Neovim
