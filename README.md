@@ -30,14 +30,15 @@ nvim
 ```
 
 ### Plugins
-- project
-- trouble
-- lightbulb
-- twiglight
-- pretty-fold
-- lualine
-- tabnine
-- alpha
+- [project.nvim](https://github.com/ahmedkhalf/project.nvim)
+- [trouble.nvim](https://github.com/folke/trouble.nvim)
+- [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb)
+- [twiglight.nvim](https://github.com/folke/twilight.nvim)
+- [pretty-fold.nvim](https://github.com/anuvyklack/pretty-fold.nvim)
+- [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+- [tabnine.nvim](https://github.com/codota/tabnine-nvim)
+- [alpha.nvim](https://github.com/goolord/alpha-nvim)
 
 ### LSP
 - typescript
