@@ -38,7 +38,7 @@ nvim
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - [tabnine.nvim](https://github.com/codota/tabnine-nvim)
-- [alpha.nvim](https://github.com/goolord/alpha-nvim)
+- [alpha.nvim](https://github.com/goolord/alpha-nvim f)
 
 ### LSP
 - typescript
