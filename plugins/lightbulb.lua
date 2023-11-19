@@ -120,14 +120,20 @@ return {
             ignore = {
                 -- LSP client names to ignore.
                 -- Example: {"null-ls", "lua_ls"}
-                clients = {},
+                clients = {  },
                 -- Filetypes to ignore.
                 -- Example: {"neo-tree", "lua"}
-                ft = {},
+                ft = { "neo-tree", "alpha"},
                 -- Ignore code actions without a `kind` like refactor.rewrite, quickfix.
                 actions_without_kind = false,
             },
         })
+        -- paint lightbulb yellow
+        local hls = { "LightBulbSign", "LightBulbVirtualText", "LightBulbFloatWin", "LightBulbVirtualText" }
+        for _, hlGroup in ipairs(hls) do
+            vim.api.nvim_set_hl(0, hlGroup, { fg='#ffffe6', bold=true })
+        end
+
     end,
     event = "User AstroFile"
 }

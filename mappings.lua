@@ -6,7 +6,9 @@ return {
       end,
       desc = "Projects",
     },
+    ["<leader>ff"] = { ":cd $HOME/projects | Telescope find_files<CR>", desc = "Find Files" },
     ["<leader>fr"] = { function() require("telescope.builtin").oldfiles() end, desc = "Find Recents" },
+    ["<leader>fT"] = { ":TodoTelescope<CR>", desc = "Find TODO's" },
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
       function()
@@ -18,9 +20,7 @@ return {
     },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
-    ["<leader>b"] = { name = "Buffers" },
-    -- quick save
-    ["<C-s>"] = { ":w!<cr>", desc = "Save File" },   -- change description but the same command
+    ["<leader>b"] = { name = "Buffers" }, -- change description but the same command
   },
   t = {
     -- setting a mapping to false will disable it

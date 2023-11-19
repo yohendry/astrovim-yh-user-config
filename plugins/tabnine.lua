@@ -11,7 +11,7 @@ return {
             accept_keymap = ";",
             dismiss_keymap = "<C-]>",
             debounce_ms = 800,
-            suggestion_color = { gui = "#89B9AD", cterm = 244 },
+            suggestion_color = { fg = "#89B9AD", cterm = 244 },
             exclude_filetypes = { "TelescopePrompt", "NvimTree" },
         },
     }
