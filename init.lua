@@ -1,5 +1,5 @@
 return {
-    colorscheme = "material", -- catppuccin | gruvbox-material | vscode | astrotheme
+    colorscheme = "tokyonight-storm", -- catppuccin | gruvbox-material | vscode | astrotheme
 
     -- This function is run last and is a good place to configuring
     -- augroups/autocommands and custom filetypes also this just pure lua so
@@ -7,6 +7,7 @@ return {
     polish = function()
         require("user.autocmd")
 
+        -- prevent clipboard to be replaced when pasted a yanked content
         local function visual_paste_without_yank()
             vim.fn.setreg('x', vim.fn.getreg('*'))
             vim.api.nvim_paste(vim.fn.getreg('*'), {}, -1)

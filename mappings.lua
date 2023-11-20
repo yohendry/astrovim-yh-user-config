@@ -6,7 +6,7 @@ return {
       end,
       desc = "Projects",
     },
-    ["<leader>ff"] = { ":cd $HOME/projects | Telescope find_files<CR>", desc = "Find Files" },
+    ["<leader>ff"] = { ":Telescope find_files<CR>", desc = "Find Files" },
     ["<leader>fr"] = { function() require("telescope.builtin").oldfiles() end, desc = "Find Recents" },
     ["<leader>fT"] = { ":TodoTelescope<CR>", desc = "Find TODO's" },
     -- mappings seen under group name "Buffer"

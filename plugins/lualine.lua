@@ -65,6 +65,7 @@ return {
                 options = {
                     component_separators = '',
                     section_separators = { left = '', right = '' },
+                    theme = 'tokyonight'
                 },
                 sections = process_sections {
                     lualine_a = { 'mode' },
