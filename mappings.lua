@@ -21,9 +21,15 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" }, -- change description but the same command
+    ["<leader>'"] = { "ciw''<Esc>P", desc = "surround word ''" },
+    ['<leader>"'] = { 'ciw""<Esc>P', desc = 'surround word ""'},
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  v = {
+    ["<leader>'"] = { "c''<Esc>P", desc = "surround selection ''" },
+    ['<leader>"'] = { 'c""<Esc>P', desc = 'surround selection ""' },
+  }
 }
